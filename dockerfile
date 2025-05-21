@@ -1,4 +1,4 @@
-FROM python:3.13-alpine
+FROM python:3.14.0b1-alpine3.21
 
 RUN pip install pandas scikit-learn matplotlib
 
