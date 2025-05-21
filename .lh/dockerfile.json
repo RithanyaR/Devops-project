@@ -1,0 +1,18 @@
+{
+    "sourceFile": "dockerfile",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1745683754520,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1745683754520,
+            "name": "Commit-0",
+            "content": "FROM python:3.12-alpine3.21\r\n\r\nRUN pip install pandas scikit-learn matplotlib\r\n\r\nWORKDIR /mlproject\r\n\r\nCOPY . .\r\n\r\nCMD [\"python\", \"app.py\"]\r\n"
+        }
+    ]
+}

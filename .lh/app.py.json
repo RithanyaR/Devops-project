@@ -1,0 +1,18 @@
+{
+    "sourceFile": "app.py",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1745637801979,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1745637801979,
+            "name": "Commit-0",
+            "content": "from pandas import read_csv\r\nfrom matplotlib import pyplot\r\nfrom sklearn.linear_model import LogisticRegression\r\nfrom sklearn.model_selection import train_test_split\r\nimport joblib \r\n\r\n# Step 1: Load dataset\r\nfilename = \"Iris.csv\"\r\ndata = read_csv(filename)\r\n\r\n# Step 2: Display data shape and preview\r\nprint(\"Shape of the dataset:\", data.shape)\r\nprint(\"First 20 rows:\\n\", data.head(20))\r\n\r\n# Step 3: Plot and save histograms silently\r\ndata.hist()\r\n\r\npyplot.savefig(\"histograms.png\")\r\npyplot.close()  # Close the plot so it doesn't show up in prompt\r\n\r\n# Step 4: Plot and save density plots silently\r\ndata.plot(kind='density', subplots=True, layout=(3,3), sharex=False)\r\npyplot.savefig(\"density_plots.png\")\r\npyplot.close()\r\n\r\n# Step 5: Convert to NumPy array and extract features/labels\r\narray = data.values\r\nX = array[:, 1:5]  # Features: Sepal/Petal measurements\r\nY = array[:, 5]    # Target: Species\r\n\r\n# Step 6: Split data into training (67%) and testing (33%)\r\ntest_size = 0.33\r\nseed = 7\r\nX_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=test_size, random_state=seed)\r\n\r\n# Step 7: Create and train logistic regression model\r\nmodel = LogisticRegression(max_iter=200)\r\nmodel.fit(X_train, Y_train)\r\n\r\n# Step 8: Evaluate and display accuracy\r\nresult = model.score(X_test, Y_test)\r\nprint(\"Accuracy: {:.2f}%\".format(result * 100))\r\n\r\n# Step 9: Save the trained model to a file\r\njoblib.dump(model, \"logistic_model.pkl\")"
+        }
+    ]
+}

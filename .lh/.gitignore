@@ -1,0 +1,4 @@
+*.csv
+.history/
+.lh/
+*.dockerfile
