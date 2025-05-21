@@ -1,0 +1,30 @@
+{
+    "sourceFile": "dockerfile",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1745683754520,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1747838536931,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-FROM python:3.12-alpine3.21\r\n+FROM python:3.13-alpine\r\n \r\n RUN pip install pandas scikit-learn matplotlib\r\n \r\n WORKDIR /mlproject\r\n"
+                },
+                {
+                    "date": 1747840670159,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-FROM python:3.13-alpine\r\n+FROM python:3.14.0a2-alpine3.21\r\n \r\n RUN pip install pandas scikit-learn matplotlib\r\n \r\n WORKDIR /mlproject\r\n"
+                },
+                {
+                    "date": 1747840867952,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-FROM python:3.14.0a2-alpine3.21\r\n+FROM python:3.14.0b1-alpine3.21\r\n \r\n RUN pip install pandas scikit-learn matplotlib\r\n \r\n WORKDIR /mlproject\r\n"
+                }
+            ],
+            "date": 1745683754520,
+            "name": "Commit-0",
+            "content": "FROM python:3.12-alpine3.21\r\n\r\nRUN pip install pandas scikit-learn matplotlib\r\n\r\nWORKDIR /mlproject\r\n\r\nCOPY . .\r\n\r\nCMD [\"python\", \"app.py\"]\r\n"
+        }
+    ]
+}
